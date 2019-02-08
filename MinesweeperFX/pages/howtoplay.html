@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			.red {
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>How to Play</h1>
+		
+		<h2>Objective</h2>
+		<p>The objective of Minesweeper is to uncover all of the cells on the map
+			without uncovering any mines.</p>
+		
+		<h2>Controls and GUI Layout</h2>
+		<ul>
+		<li><b>Mouse1 click</b> -- uncover a cell at the location of the mouse pointer.</li>
+		<li><b>Mouse2 click</b> -- cycle between flagging, question-marking, and unmarking the cell at the location of the mouse pointer.</li>
+		<li><b>Smiley face</b> -- smiles normally when the game has been neither won nor lost yet, opens its mouth upon the user's clicking
+			inside the map's bounds, has sunglasses on when the map is in a game-win state (i.e., all of the non-mine cells have been
+			uncovered), and has a 'dead' face when the map is in a game-lose state (i.e., a mine was uncovered).</li>
+		<li><b>Number of Flags Remaining</b> (located at bottom of HUD) -- displays the number of flags remaining to use to mark a cell that
+			the player thinks is a mine. The indicator here can go negative, but this would mean that more flags were used to mark a potentially
+			mined cell than were actually necessary.</li>
+		<li><b>Time</b> (located at bottom of HUD) -- displays the time that has elapsed since the start of the game, in seconds.</li>
+		<li><b>Game</b> (located at top of HUD) -- the game menu. Clicking on the button displays a drop-down menu, which gives the player the options
+			to start a new game of certain difficulty (based on map size and mine density), make their own custom game, or quit the application.</li>
+		<li><b>Options</b> (located at top of HUD) -- the options menu. Clicking on the button displays a drop-down menu, which allows the player to 
+			set the number of mines on the map (no greater that 90% dense and no less than 0% dense), or set the size of the map.</li>
+		<li><b>Help</b> (located at top of HUD) -- the 'help' menu. A drop-down menu containing the <strong>About</strong> signature of this application,
+			and this <strong>How to Play</strong> page that you are currently viewing.</li>
+		</ul>
+
+		<h2>Gameplay</h2>
+		<p>Each session of Minesweeper begins with a 10x10 size map, with exactly 10 of those
+			cells containing a mine, and all of the cells' content being covered. A player
+			may left-click on the smiley face at the top at any time to reset the game to its
+			origin state, which is changed when the player uses the Game menu at the top-left corner
+			to start a new <strong>Beginner</strong>, <strong>Intermediate</strong>, <strong>Expert</strong>, or <strong>Custom</strong> game.
+		</p>
+		<p>In order to progress to beating the game, the player must strategically uncover all of the non-mine cells
+			on the map. However, on the opening click, the player does not have enough information about the map
+			in order to make strategy-guided move without accidentally uncovering a mine. Thus, on the opening click,
+			a mine is guaranteed to not be uncovered (in fact, with a map that has a proper density of mines, the opening
+			click is almost sure to be a blank).
+		</p>
+		<p>Uncovering a blank cell recursively uncovers the non-mine cells adjacent to it (according to the 8 cells directly touching it). A cell on the map
+			may be any one of the three types: a <strong>numbered-cell</strong>, a <strong>mined-cell</strong>, or a <strong>blank</strong> cell. The number on a <strong>numbered-cell</strong>
+			is indicative of the number of mines that are adjacent to itself. Once they are uncovered, they can give the player more information about this session's
+			map and help them to determine which cells are mines without having to guess. A <strong>mined-cell</strong> can be uncovered if and only if the user Mouse1-clicks
+			on such a cell, in which case, the game is over. Finally, an uncovered cell that has no picture on it (i.e., a <strong>blank</strong> cell) indicates that there are no mined-cells
+			adjacent to it.
+		</p>
+		<p>Using this knowledge, a player is able to uncover every one of the map's unmined cells. However, in order to ensure that no mistakes are made in doing so, a player may wish
+			to mark uncovered cells which he/she thinks are mined ones with flags. That way, the player makes a note to himself/herself that he/she should not Mouse1-click on that
+			cell. The "Number of flags" indicator at the bottom of the HUD (heads-up display) displays to the player how many flags he/she has remaining with which to mark potential mines.
+			However, the indicator will not let the player know whether a cell he/she has marked with a flag <em>is</em> actually a mine, so a player must with every intention try to be as
+			accurate as possible when marking cells he/she thinks are mined.
+		</p>
+		
+		<h2>Endgame Conditions</h2>
+		<p>The timer located at the bottom of the HUD tells the player how much time has elapsed (in seconds) since they have begun their current session of Minesweeper. The timer will start only
+			when the player has made their opening Mouse1-click on the map.</p>
+		<p>Once the player succeeds in uncovering all of the unmined cells on the map of the current session, the map is considered to be in the <em>game-win</em> state. The smiley face will put on
+			sunglasses to indicate this victory, and also "Victory!!" will be printed out to the console window. The player will not be able to click on any cell on the map once it enteres the
+			game-win state, but they are still able to click on the smiley face to reset the map, or start a new session according to their wishes using the top menu bar of the HUD.
+		</p>
+		<p>If at any time while the session has been neither won nor lost and the player attempts to uncover a cell that is mined, the game will enter the <em>game-lose</em> state. The smiley face will
+			morph into an emoji representing defeat, and also "Lose :'c" will be printed out to the console window. In addition, in order to help the player to improve, the map will uncover the mined
+			cell that the player clicked on in <strong class="red">red</strong>, and all of the other mined cells on the map in the normal color. If the player incorrectly flagged a cell as a mine,
+			that cell will be uncovered as a mine crossed out with a red <strong class="red">"X"</strong>. The player, just as stated before, will not be able to click on any cell on the map once the 
+			game-lose state has been entered, but they are still able to click on the smiley face to reset the map, or start a new session according to their wishes using the top menu bar of the HUD.
+		</p>
+	</body>
+</html>
