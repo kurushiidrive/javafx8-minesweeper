@@ -1,5 +1,3 @@
-/ConsoleDriver.class
-/MSModel.class
 /Minesweeper$1.class
 /Minesweeper$10.class
 /Minesweeper$11.class
@@ -16,9 +14,3 @@
 /Minesweeper$7.class
 /Minesweeper$8.class
 /Minesweeper$9.class
-/Minesweeper$MineMap.class
-/Minesweeper.class
-/MinesweeperConsoleController.class
-/MinesweeperController.class
-/MinesweeperModel$Cell.class
-/MinesweeperModel.class

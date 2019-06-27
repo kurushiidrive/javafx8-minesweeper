@@ -1,3 +1,4 @@
+import java.net.URL;
 import java.util.Optional;
 
 import javafx.animation.AnimationTimer;
@@ -367,7 +368,8 @@ public class Minesweeper extends Application {
 				});
 				WebView wv = new WebView ();
 				WebEngine we = wv.getEngine();
-				we.load ("file:///C:/Users/boateng/Documents/chs_apcompsci_2016-17/MinesweeperFX/pages/about.html");
+				String url = getClass().getResource("about.html").toExternalForm();
+				we.load (url);
 				rt.getChildren().addAll(wv, okay);
 
 				Scene scn = new Scene (rt);
@@ -392,7 +394,8 @@ public class Minesweeper extends Application {
 				});
 				WebView wv = new WebView ();
 				WebEngine we = wv.getEngine ();
-				we.load ("file:///C:/Users/boateng/Documents/chs_apcompsci_2016-17/MinesweeperFX/pages/howtoplay.html");
+				String url = getClass().getResource("howtoplay.html").toExternalForm();
+				we.load(url);
 				rt.getChildren().addAll (wv, okay);
 
 				Scene scn = new Scene (rt);
@@ -442,28 +445,28 @@ public class Minesweeper extends Application {
 			model = null;
 			cells = null;
 
-			unrevealed = new Image ("file:minesweeper_images\\images\\blank.gif");
-			one = new Image ("file:minesweeper_images\\images\\num_1.gif");
-			two = new Image ("file:minesweeper_images\\images\\num_2.gif");
-			three = new Image ("file:minesweeper_images\\images\\num_3.gif");
-			four = new Image ("file:minesweeper_images\\images\\num_4.gif");
-			five = new Image ("file:minesweeper_images\\images\\num_5.gif");
-			six = new Image ("file:minesweeper_images\\images\\num_6.gif");
-			seven = new Image ("file:minesweeper_images\\images\\num_7.gif");
-			eight = new Image ("file:minesweeper_images\\images\\num_8.gif");
-			nil = new Image ("file:minesweeper_images\\images\\num_0.gif");
-			mine = new Image ("file:minesweeper_images\\images\\bomb_revealed.gif");
+			unrevealed = new Image ("file:minesweeper_images/images/blank.gif");
+			one = new Image ("file:minesweeper_images/images/num_1.gif");
+			two = new Image ("file:minesweeper_images/images/num_2.gif");
+			three = new Image ("file:minesweeper_images/images/num_3.gif");
+			four = new Image ("file:minesweeper_images/images/num_4.gif");
+			five = new Image ("file:minesweeper_images/images/num_5.gif");
+			six = new Image ("file:minesweeper_images/images/num_6.gif");
+			seven = new Image ("file:minesweeper_images/images/num_7.gif");
+			eight = new Image ("file:minesweeper_images/images/num_8.gif");
+			nil = new Image ("file:minesweeper_images/images/num_0.gif");
+			mine = new Image ("file:minesweeper_images/images/bomb_revealed.gif");
 
-			flag = new Image ("file:minesweeper_images\\images\\bomb_flagged.png");
-			question = new Image ("file:minesweeper_images\\images\\bomb_question.gif");
-			mine_lose = new Image ("file:minesweeper_images\\images\\bomb_death.gif");
-			mine_revealed = new Image ("file:minesweeper_images\\images\\bomb_revealed.gif");
-			mine_wrong = new Image ("file:minesweeper_images\\images\\bomb_wrong.gif");
+			flag = new Image ("file:minesweeper_images/images/bomb_flagged.png");
+			question = new Image ("file:minesweeper_images/images/bomb_question.gif");
+			mine_lose = new Image ("file:minesweeper_images/images/bomb_death.gif");
+			mine_revealed = new Image ("file:minesweeper_images/images/bomb_revealed.gif");
+			mine_wrong = new Image ("file:minesweeper_images/images/bomb_wrong.gif");
 
-			ooh = new Image ("file:minesweeper_images\\images\\face_ooh.gif");
-			lose = new Image ("file:minesweeper_images\\images\\face_dead.gif");
-			smile = new Image ("file:minesweeper_images\\images\\face_smile.gif");
-			win = new Image ("file:minesweeper_images\\images\\face_win.gif");
+			ooh = new Image ("file:minesweeper_images/images/face_ooh.gif");
+			lose = new Image ("file:minesweeper_images/images/face_dead.gif");
+			smile = new Image ("file:minesweeper_images/images/face_smile.gif");
+			win = new Image ("file:minesweeper_images/images/face_win.gif");
 
 			imgwidth = nil.getWidth();
 			imgheight = nil.getHeight();
