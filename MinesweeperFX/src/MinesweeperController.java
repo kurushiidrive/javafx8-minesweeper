@@ -80,8 +80,11 @@ public class MinesweeperController {
 			if (primaryClick)
 			{
 				if (!completeFirstClick) {
-					while (mm.getStateAt(row, col) != MinesweeperModel.Cell.BLANK)
-						mm.make (mm.getNumMines(), row, col);
+					// below line not needed if we aren't trying to ensure best possibilty of a blank on first click
+					// no while-loop is needed since MinesweeperModel's make() function already handles \
+					// the preventation of the row,col location passed from being a mine.
+//					while (mm.getStateAt(row, col) != MinesweeperModel.Cell.BLANK)
+					mm.make (mm.getNumMines(), row, col);
 					completeFirstClick = true;
 				}
 				mm.reveal (row, col);

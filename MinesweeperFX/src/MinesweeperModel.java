@@ -152,10 +152,13 @@ public class MinesweeperModel implements MSModel {
 		{
 			int row = rnd.nextInt(grid.length);
 			int col = rnd.nextInt(grid[0].length);
-			while (isMine(row, col) || ((row == rloc && col == cloc) || (row == rloc-1 && col == cloc) 
+			// the commented out while loop below was the code for giving the best possible chance for the first tile clicked
+			// to be a blank. However for high-density maps this is not very practical.
+			/*while (isMine(row, col) || ((row == rloc && col == cloc) || (row == rloc-1 && col == cloc) 
 					|| (row == rloc-1 && col == cloc+1) || (row == rloc && col == cloc+1)
 					|| (row == rloc+1 && col == cloc+1) || (row == rloc+1 && col == cloc)
-					|| (row == rloc+1 && col == cloc-1) || (row == rloc && col == cloc-1)))
+					|| (row == rloc+1 && col == cloc-1) || (row == rloc && col == cloc-1)))*/
+			while (isMine(row, col) || (row == rloc && col == cloc))
 			{
 				row = rnd.nextInt(grid.length);
 				col = rnd.nextInt(grid[0].length);
