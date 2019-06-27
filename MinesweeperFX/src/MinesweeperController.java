@@ -80,11 +80,9 @@ public class MinesweeperController {
 			if (primaryClick)
 			{
 				if (!completeFirstClick) {
-					if (mm.getStateAt(row, col) != MinesweeperModel.Cell.BLANK)
-					{
+					while (mm.getStateAt(row, col) != MinesweeperModel.Cell.BLANK)
 						mm.make (mm.getNumMines(), row, col);
-						completeFirstClick = true;
-					}
+					completeFirstClick = true;
 				}
 				mm.reveal (row, col);
 			}
@@ -103,7 +101,7 @@ public class MinesweeperController {
 			}
 
 			if (mm.isGameLost()) {
-				System.out.println("Lose :\'c");
+				System.out.println("Defeat :\'c");
 				stopped_lose = true;
 			}
 			if (mm.isGameWon()) {
