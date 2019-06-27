@@ -1,4 +1,3 @@
-import java.net.URL;
 import java.util.Optional;
 
 import javafx.animation.AnimationTimer;
@@ -445,28 +444,28 @@ public class Minesweeper extends Application {
 			model = null;
 			cells = null;
 
-			unrevealed = new Image ("file:minesweeper_images/images/blank.gif");
-			one = new Image ("file:minesweeper_images/images/num_1.gif");
-			two = new Image ("file:minesweeper_images/images/num_2.gif");
-			three = new Image ("file:minesweeper_images/images/num_3.gif");
-			four = new Image ("file:minesweeper_images/images/num_4.gif");
-			five = new Image ("file:minesweeper_images/images/num_5.gif");
-			six = new Image ("file:minesweeper_images/images/num_6.gif");
-			seven = new Image ("file:minesweeper_images/images/num_7.gif");
-			eight = new Image ("file:minesweeper_images/images/num_8.gif");
-			nil = new Image ("file:minesweeper_images/images/num_0.gif");
-			mine = new Image ("file:minesweeper_images/images/bomb_revealed.gif");
+			unrevealed = new Image (getClass().getResource("blank.gif").toExternalForm());
+			one = new Image (getClass().getResource("num_1.gif").toExternalForm());
+			two = new Image (getClass().getResource("num_2.gif").toExternalForm());
+			three = new Image (getClass().getResource("num_3.gif").toExternalForm());
+			four = new Image (getClass().getResource("num_4.gif").toExternalForm());
+			five = new Image (getClass().getResource("num_5.gif").toExternalForm());
+			six = new Image (getClass().getResource("num_6.gif").toExternalForm());
+			seven = new Image (getClass().getResource("num_7.gif").toExternalForm());
+			eight = new Image (getClass().getResource("num_8.gif").toExternalForm());
+			nil = new Image (getClass().getResource("num_0.gif").toExternalForm());
+			mine = new Image (getClass().getResource("bomb_revealed.gif").toExternalForm());
 
-			flag = new Image ("file:minesweeper_images/images/bomb_flagged.png");
-			question = new Image ("file:minesweeper_images/images/bomb_question.gif");
-			mine_lose = new Image ("file:minesweeper_images/images/bomb_death.gif");
-			mine_revealed = new Image ("file:minesweeper_images/images/bomb_revealed.gif");
-			mine_wrong = new Image ("file:minesweeper_images/images/bomb_wrong.gif");
+			flag = new Image (getClass().getResource("bomb_flagged.png").toExternalForm());
+			question = new Image (getClass().getResource("bomb_question.gif").toExternalForm());
+			mine_lose = new Image (getClass().getResource("bomb_death.gif").toExternalForm());
+			mine_revealed = new Image (getClass().getResource("bomb_revealed.gif").toExternalForm());
+			mine_wrong = new Image (getClass().getResource("bomb_wrong.gif").toExternalForm());
 
-			ooh = new Image ("file:minesweeper_images/images/face_ooh.gif");
-			lose = new Image ("file:minesweeper_images/images/face_dead.gif");
-			smile = new Image ("file:minesweeper_images/images/face_smile.gif");
-			win = new Image ("file:minesweeper_images/images/face_win.gif");
+			ooh = new Image (getClass().getResource("face_ooh.gif").toExternalForm());
+			lose = new Image (getClass().getResource("face_dead.gif").toExternalForm());
+			smile = new Image (getClass().getResource("face_smile.gif").toExternalForm());
+			win = new Image (getClass().getResource("face_win.gif").toExternalForm());
 
 			imgwidth = nil.getWidth();
 			imgheight = nil.getHeight();
